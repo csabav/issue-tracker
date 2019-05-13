@@ -1,0 +1,55 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Route } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { fakeBackendProvider } from './helpers/fake-backend';
+import { jwtInterceptorProvider } from './helpers/jwt.interceptor';
+import { AuthGuard } from "./guards/auth.guard";
+
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NewIssueComponent } from './new-issue/new-issue.component';
+import { OptionsComponent } from './options/options.component';
+import { IssueComponent } from './issue/issue.component';
+import { LoginComponent } from './login/login.component';
+import { AssignedToMeComponent } from './dashboard/assigned-to-me/assigned-to-me.component';
+import { CreatedByMeComponent } from './dashboard/created-by-me/created-by-me.component';
+import { ClosedIssuesComponent } from './dashboard/closed-issues/closed-issues.component';
+
+let routes = [
+  { path: "", component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: "newissue", component: NewIssueComponent, canActivate: [AuthGuard] },
+  { path: "options", component: OptionsComponent, canActivate: [AuthGuard] },
+  { path: "issue/:id", component: IssueComponent, canActivate: [AuthGuard] },
+  { path: "login", component: LoginComponent },
+  { path: "**", redirectTo: "" }
+];
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    NewIssueComponent,
+    OptionsComponent,
+    IssueComponent,
+    LoginComponent,
+    AssignedToMeComponent,
+    CreatedByMeComponent,
+    ClosedIssuesComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    jwtInterceptorProvider,
+    fakeBackendProvider
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

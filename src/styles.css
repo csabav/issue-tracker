@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Application-wide Styles */
+
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+
+h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.my-1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.my-2 {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.my-3 {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.my-4 {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+.mx-1 {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.mx-2 {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.mx-3 {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.mx-4 {
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.mx-auto {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-nav>li>a:hover {
+    background-color: #0660ad;
+}
+
+.navbar-nav>li.active>a {
+    background-color: #67a5db;
+}
+
+.card-header {
+    background-color: #337ab7;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.btn-primary:hover {
+    background-color: #0660ad;
+    border-color: #0660ad;
+}

@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">Closed Issues</div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead *ngIf="(issues | async)?.length > 0">
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Assignee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let issue of issues | async; let i = index">
+          <td>{{i+1}}</td>
+          <td><a routerLink="/issue/{{issue.id}}">{{issue.title}}</a></td>
+          <td>{{getUserName(issue.assignedToID)}}</td>
+        </tr>
+        <tr *ngIf="(issues | async)?.length == 0">
+          <td colspan="3" class="text-center">No issues</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

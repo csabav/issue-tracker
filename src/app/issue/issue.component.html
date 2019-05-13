@@ -1,0 +1,136 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card" *ngIf="selectedIssue">
+          <div class="card-header">{{selectedIssue.title}}</div>
+          <div class="card-body">
+            <form>
+              <p>
+                Donec a pellentesque urna, nec pharetra felis. Suspendisse pharetra dignissim tortor. Duis placerat
+                commodo eros vel tristique. Fusce interdum nulla metus, vitae auctor quam gravida ut. Nulla suscipit
+                gravida nisi et suscipit. Nam vel ante convallis, mollis ante quis, gravida sem. Nullam efficitur sapien
+                augue. In sapien enim, venenatis eu neque sit amet, molestie finibus arcu. Maecenas cursus odio dui, et
+                hendrerit nisi vehicula et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+                ridiculus mus. Vestibulum non felis cursus, scelerisque purus ac, cursus libero. Nulla malesuada semper
+                vestibulum. Aenean lacinia lacus sit amet justo rutrum, nec dapibus eros tempus. Vivamus congue augue at
+                sem malesuada vehicula.
+              </p>
+
+              <div class="form-group">
+                <label for="inputAssignedTo">Assigned To</label>
+                <select class="form-control" id="inputAssignedTo">
+                  <option>User 1</option>
+                  <option>User 2</option>
+                  <option>User 3</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputCategory">Category</label>
+                <select class="form-control" id="inputCategory">
+                  <option>Category 1</option>
+                  <option>Category 2</option>
+                  <option>Category 3</option>
+                  <option>Category 4</option>
+                  <option>Category 5</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputPriority">Priority</label>
+                <select class="form-control" id="inputPriority">
+                  <option>Priority 1</option>
+                  <option>Priority 2</option>
+                  <option>Priority 3</option>
+                  <option>Priority 4</option>
+                  <option>Priority 5</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputDueDate">Due Date:</label>
+                <input type="date" class="form-control" id="inputDueDate">
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">Set Status</div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="inputStatus">New Status:</label>
+                <select class="form-control" id="inputStatus">
+                  <option>Status 1</option>
+                  <option>Status 2</option>
+                  <option>Status 3</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputResolution">Resolution:</label>
+                <select class="form-control" id="inputResolution">
+                  <option>Resolution 1</option>
+                  <option>Resolution 2</option>
+                  <option>Resolution 3</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputNotes">Notes:</label>
+                <textarea class="form-control" placeholder="Enter notes..." rows="4"></textarea>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my-3">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <div class="card">
+          <div class="card-body">
+            <dl>
+              <dt>User 1 - 20 Feb 2019 12:19 PM - In Progress</dt>
+              <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis odio ac eros pellentesque
+                interdum. Duis placerat vulputate nisl, sit amet varius sem vehicula sit amet.</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <dl>
+              <dt>User 2 - 18 Feb 2019 09:47 AM - Created</dt>
+              <dd>
+                Phasellus sagittis volutpat justo, volutpat sagittis elit ultricies vitae. Ut nec turpis lectus. Nullam
+                sit amet quam a tortor tristique imperdiet. Sed quis pretium sapien, a placerat lacus. Sed in
+                sollicitudin nunc, auctor viverra turpis. Donec odio lectus, porttitor non sapien ut, commodo maximus
+                quam. Nulla facilisi. Quisque eu volutpat massa, nec ultrices nulla. Fusce ac massa eget mauris porta
+                semper.
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
