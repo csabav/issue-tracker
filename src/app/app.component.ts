@@ -13,6 +13,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit {
   title = 'Issue Tracker';
   currentUser: User;
+  navbarOpen = false;
 
   constructor(private router: Router, private authService: AuthService) { }
 
@@ -23,5 +24,9 @@ export class AppComponent implements OnInit {
   logout(){
     this.authService.logout();
     this.router.navigate(["/login"]);
+  }
+
+  toggleNavbar(){
+    this.navbarOpen = !this.navbarOpen;
   }
 }

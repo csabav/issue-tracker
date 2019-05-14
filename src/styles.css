@@ -82,6 +82,18 @@ textarea {
     background-color: #67a5db;
 }
 
+.navbar-nav>li>button {
+    color: #fff;
+}
+
+.navbar-nav>li>button:hover {
+    background-color: #0660ad;
+}
+
+.navbar-nav>li.active>button {
+    background-color: #67a5db;
+}
+
 .card-header {
     background-color: #337ab7;
     color: #fff;
