@@ -25,7 +25,7 @@ export class ClosedIssuesComponent implements OnInit {
 
   getIssues() {
     let userID = this.authService.currentUserValue.id;
-    let closedStatusID = 3;
+    let closedStatusID = 4;
 
     this.issues = this.issueService.getIssuesByStatus({ userID: userID, statusID: closedStatusID });
   }

@@ -29,7 +29,7 @@ export class CreatedByMeComponent implements OnInit {
   getIssues() {
     let userID = this.authService.currentUserValue.id;
 
-    this.issues = this.issueService.getIssuesByCreator({ createdByID: userID });
+    this.issues = this.issueService.getIssuesByCreator(userID);
   }
 
   getStatuses(){

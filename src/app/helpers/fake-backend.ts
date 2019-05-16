@@ -3,21 +3,40 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { User } from '../models/user.type';
 import { mergeMap, materialize, dematerialize, delay } from 'rxjs/operators';
+import { Issue } from '../models/issue.type';
+import { FakeDb } from './fake-db';
+import { Status } from '../models/status.type';
+import * as _ from 'lodash';
+import { Note } from '../models/note.type';
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const users: User[] = [
-            { id: 1, email: "admintester@issuetracker.com", username: "admin", password: "admin", firstName: "Admin", lastName: "Tester", userLevelID: 1 },
-            { id: 2, email: "tester@issuetracker.com", username: "test", password: "test", firstName: "Test", lastName: "Tester", userLevelID: 2 }
-        ];
+    fakeDb: any;
 
+    constructor() {
+        // localStorage.clear();
+        this.load();
+    }
+
+    private load() {
+        this.fakeDb = JSON.parse(localStorage.getItem('fakeDb')) || FakeDb;
+        this.save();
+    }
+
+    private save() {
+        localStorage.setItem("fakeDb", JSON.stringify(this.fakeDb));
+        return of(delay(200));
+    }
+
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const authHeader = req.headers.get("Authorization");
         const isLoggedIn = authHeader && authHeader.startsWith("Bearer fake-jwt-token");
 
         return of(null).pipe(mergeMap(() => {
+            console.log(req.url);
+
             if (req.url.endsWith("/users/auth") && req.method === "POST") {
-                const user = users.find(u => u.username === req.body.username && u.password === req.body.password);
+                const user = this.fakeDb.Users.find(u => u.username === req.body.username && u.password === req.body.password);
 
                 if (!user) {
                     return error('Username or password is incorrect');
@@ -34,13 +53,68 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 });
             }
 
+            if (req.url.endsWith("/issues/update/") && req.method === "POST") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                let issue: Issue = req.body.issue;
+                let updateSuccess = false;
+
+                if (issue.id) {
+                    for (let i = 0; i < this.fakeDb.Issues.length; i++) {
+                        if (this.fakeDb.Issues[i].id === issue.id) {
+                            this.fakeDb.Issues[i] = issue;
+                            updateSuccess = true;
+                            this.save();
+                            break;
+                        }
+                    }
+                }
+
+                if (!updateSuccess) {
+                    return error("The issue you're trying to update doesn't exist");
+                }
+
+                return ok(issue);
+            }
+
+            if (req.url.endsWith("/notes/add/") && req.method === "POST") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                let note: Note = req.body.note;
+                let issue: Issue = _.find(this.fakeDb.Issues, i => i.id === note.issueID);
+
+                if (!issue) {
+                    return error("The issue you're trying to update doesn't exist");
+                }
+
+                for (let i = 0; i < this.fakeDb.Issues.length; i++) {
+                    if (this.fakeDb.Issues[i].id === issue.id) {
+                        this.fakeDb.Issues[i].statusID = note.statusID;
+                        this.save();
+                        break;
+                    }
+                }
+
+                let maxNote: Note = _.maxBy(this.fakeDb.Notes, n => n.id);
+                note.id = ((maxNote && maxNote.id) || 0) + 1;
+                this.fakeDb.Notes.push(note);
+                this.save();
+
+                return ok(note);
+            }
+
             if (req.url.endsWith("/users") && req.method === "GET") {
+                // TODO: to properly do this we need an error interceptor
                 if (!isLoggedIn) {
                     return unauthorized();
                 }
 
                 let userResults = [];
-                users.forEach(user => {
+                this.fakeDb.Users.forEach(user => {
                     let userResult = {
                         id: user.id,
                         email: user.email,
@@ -56,10 +130,99 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return ok(userResults);
             }
 
+            if (req.url.match(/\/notes\/issue\/(\d+)/) && req.method === "GET") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                let urlParts = req.url.split('/');
+                let id = +urlParts[urlParts.length - 1];
+
+                return ok(_.orderBy(_.filter(this.fakeDb.Notes, n => n.issueID === id), ['id'], ['desc']));
+            }
+
+            if (req.url.endsWith("/issues") && req.method === "GET") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                return ok(this.fakeDb.Issues);
+            }
+
+            if (req.url.match(/\/issue\/\d+/) && req.method === "GET") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                let urlParts = req.url.split('/');
+                let id = parseInt(urlParts[urlParts.length - 1]);
+
+                return ok(_.find(this.fakeDb.Issues, i => i.id === id));
+            }
+
+            if (req.url.match(/\/issues\/assignedto\/\d+/) && req.method === "GET") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                let urlParts = req.url.split('/');
+                let id = parseInt(urlParts[urlParts.length - 1]);
+
+                return ok(_.filter(this.fakeDb.Issues, i => i.assignedToID === id));
+            }
+
+            if (req.url.match(/\/issues\/createdby\/\d+/) && req.method === "GET") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                let urlParts = req.url.split('/');
+                let id = parseInt(urlParts[urlParts.length - 1]);
+
+                return ok(_.filter(this.fakeDb.Issues, i => i.createdByID === id));
+            }
+
+            if (req.url.match(/\/issues\/status\/(\d+)\/user\/(\d+)/) && req.method === "GET") {
+
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                let urlParts = req.url.split('/');
+                let statusId = parseInt(urlParts[urlParts.length - 3]);
+                let userId = parseInt(urlParts[urlParts.length - 1]);
+
+                return ok(_.filter(this.fakeDb.Issues, i => i.statusID === statusId && (i.assignedToID === userId || i.createdByID === userId)));
+            }
+
+            if (req.url.endsWith("/statuses/") && req.method === "GET") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                return ok(this.fakeDb.Statuses);
+            }
+
+            if (req.url.endsWith("/categories/") && req.method === "GET") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                return ok(this.fakeDb.Categories);
+            }
+
+            if (req.url.endsWith("/priorities/") && req.method === "GET") {
+                if (!isLoggedIn) {
+                    return unauthorized();
+                }
+
+                return ok(_.orderBy(this.fakeDb.Priorities, ['delay'], ['asc']));
+            }
+
             return next.handle(req);
         }))
             .pipe(materialize())
-            .pipe(delay(500))
+            .pipe(delay(200))
             .pipe(dematerialize());
 
         function ok(body) {

@@ -6,7 +6,7 @@ export interface Issue {
     assignedToID: number,
     createdByID: number,
     statusID: number,
-    resolutionID: number,
     categoryID: number,
+    priorityID: number
     dueOn: Date
 }

@@ -3,59 +3,49 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card" *ngIf="selectedIssue">
-          <div class="card-header">{{selectedIssue.title}}</div>
+          <div class="card-header">{{selectedIssue.title}} - {{getStatusName(selectedIssue.statusID)}}</div>
           <div class="card-body">
-            <form>
-              <p>
-                Donec a pellentesque urna, nec pharetra felis. Suspendisse pharetra dignissim tortor. Duis placerat
-                commodo eros vel tristique. Fusce interdum nulla metus, vitae auctor quam gravida ut. Nulla suscipit
-                gravida nisi et suscipit. Nam vel ante convallis, mollis ante quis, gravida sem. Nullam efficitur sapien
-                augue. In sapien enim, venenatis eu neque sit amet, molestie finibus arcu. Maecenas cursus odio dui, et
-                hendrerit nisi vehicula et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-                ridiculus mus. Vestibulum non felis cursus, scelerisque purus ac, cursus libero. Nulla malesuada semper
-                vestibulum. Aenean lacinia lacus sit amet justo rutrum, nec dapibus eros tempus. Vivamus congue augue at
-                sem malesuada vehicula.
-              </p>
+            <form (ngSubmit)="OnSaveIssue()">
+              <pre class="border rounded">{{selectedIssue.description}}</pre>
 
-              <div class="form-group">
-                <label for="inputAssignedTo">Assigned To</label>
-                <select class="form-control" id="inputAssignedTo">
-                  <option>User 1</option>
-                  <option>User 2</option>
-                  <option>User 3</option>
+              <div class="form-group my-3">
+                <label for="assignedTo">Assigned To</label>
+                <select class="form-control" name="assignedTo" [(ngModel)]="selectedIssue.assignedToID">
+                  <option *ngFor="let user of users" [selected]="selectedIssue.assignedToID === user.id"
+                    [ngValue]="user.id">{{user.username}} ({{user.firstName}} {{user.lastName}})</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="inputCategory">Category</label>
-                <select class="form-control" id="inputCategory">
-                  <option>Category 1</option>
-                  <option>Category 2</option>
-                  <option>Category 3</option>
-                  <option>Category 4</option>
-                  <option>Category 5</option>
+                <label for="category">Category</label>
+                <select class="form-control" name="category" [(ngModel)]="selectedIssue.categoryID">
+                  <option *ngFor="let category of categories | async"
+                    [selected]="selectedIssue.categoryID === category.id" [ngValue]="category.id">{{category.name}}
+                  </option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="inputPriority">Priority</label>
-                <select class="form-control" id="inputPriority">
-                  <option>Priority 1</option>
-                  <option>Priority 2</option>
-                  <option>Priority 3</option>
-                  <option>Priority 4</option>
-                  <option>Priority 5</option>
+                <label for="priority">Priority</label>
+                <select class="form-control" name="priority" [(ngModel)]="selectedIssue.priorityID">
+                  <option *ngFor="let priority of priorities | async"
+                    [selected]="selectedIssue.priorityID === priority.id" [ngValue]="priority.id">{{priority.name}}
+                  </option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="inputDueDate">Due Date:</label>
-                <input type="date" class="form-control" id="inputDueDate">
+                <label for="dueOn">Due Date:</label>
+                <input type="date" class="form-control" name="dueOn"
+                  [ngModel]="selectedIssue.dueOn | date: 'yyyy-MM-dd'" (ngModelChange)="selectedIssue.dueOn = $event">
               </div>
 
               <div class="form-group">
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary" [disabled]="issueLoading">Save</button>
+                <img *ngIf="issueLoading" class="pl-2"
+                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
               </div>
+              <div *ngIf="issueError" class="alert alert-danger">{{issueError}}</div>
             </form>
           </div>
         </div>
@@ -65,36 +55,37 @@
   <div class="col-xs-12 col-md-6">
     <div class="row">
       <div class="col-md-12">
-        <div class="card">
+        <div class="card" *ngIf="selectedIssue">
           <div class="card-header">Set Status</div>
           <div class="card-body">
-            <form>
+            <form [formGroup]="statusNoteForm" (ngSubmit)="OnStatusNoteSave()">
               <div class="form-group">
-                <label for="inputStatus">New Status:</label>
-                <select class="form-control" id="inputStatus">
-                  <option>Status 1</option>
-                  <option>Status 2</option>
-                  <option>Status 3</option>
+                <label for="status">New Status:</label>
+                <select class="form-control" formControlName="status"
+                  [ngClass]="{'is-invalid': statusNoteSubmitted && snf.status.errors}">
+                  <option *ngFor="let status of statuses" [value]="status.id">
+                    {{status.name}}</option>
                 </select>
+                <div *ngIf="statusNoteSubmitted && snf.status.errors" class="invalid-feedback">
+                  <div *ngIf="snf.status.errors.required">Status is required</div>
+                </div>
               </div>
 
               <div class="form-group">
-                <label for="inputResolution">Resolution:</label>
-                <select class="form-control" id="inputResolution">
-                  <option>Resolution 1</option>
-                  <option>Resolution 2</option>
-                  <option>Resolution 3</option>
-                </select>
+                <label for="notes">Notes:</label>
+                <textarea class="form-control" formControlName="notes" placeholder="Enter notes..." rows="4"
+                  [ngClass]="{'is-invalid': statusNoteSubmitted && snf.notes.errors}"></textarea>
+                <div *ngIf="statusNoteSubmitted && snf.notes.errors" class="invalid-feedback">
+                  <div *ngIf="snf.notes.errors.required">Notes are required</div>
+                </div>
               </div>
 
               <div class="form-group">
-                <label for="inputNotes">Notes:</label>
-                <textarea class="form-control" placeholder="Enter notes..." rows="4"></textarea>
+                <button type="submit" class="btn btn-primary" [disabled]="statusNoteLoading">Save</button>
+                <img *ngIf="statusNoteLoading" class="pl-2"
+                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
               </div>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary">Save</button>
-              </div>
+              <div *ngIf="statusNoteError" class="alert alert-danger">{{statusNoteError}}</div>
             </form>
           </div>
         </div>
@@ -104,29 +95,15 @@
 </div>
 <div class="row my-3">
   <div class="col-md-12">
-    <div class="card">
+    <div class="card" *ngIf="selectedIssue">
       <div class="card-header">Notes</div>
       <div class="card-body">
-        <div class="card">
+        <div class="card" *ngFor="let note of notes | async">
           <div class="card-body">
             <dl>
-              <dt>User 1 - 20 Feb 2019 12:19 PM - In Progress</dt>
-              <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis odio ac eros pellentesque
-                interdum. Duis placerat vulputate nisl, sit amet varius sem vehicula sit amet.</dd>
-            </dl>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <dl>
-              <dt>User 2 - 18 Feb 2019 09:47 AM - Created</dt>
-              <dd>
-                Phasellus sagittis volutpat justo, volutpat sagittis elit ultricies vitae. Ut nec turpis lectus. Nullam
-                sit amet quam a tortor tristique imperdiet. Sed quis pretium sapien, a placerat lacus. Sed in
-                sollicitudin nunc, auctor viverra turpis. Donec odio lectus, porttitor non sapien ut, commodo maximus
-                quam. Nulla facilisi. Quisque eu volutpat massa, nec ultrices nulla. Fusce ac massa eget mauris porta
-                semper.
-              </dd>
+              <dt>{{getUserName(note.userID)}} - {{note.createdOn | date:'yyyy-MM-dd H:mm'}} -
+                {{getStatusName(note.statusID)}}</dt>
+              <dd>{{note.text}}</dd>
             </dl>
           </div>
         </div>

@@ -25,7 +25,7 @@ export class AssignedToMeComponent implements OnInit {
   getIssues() {
     let userID = this.authService.currentUserValue.id;
     
-    this.issues = this.issueService.getIssuesByAsignee({assignedToID: userID});
+    this.issues = this.issueService.getIssuesByAsignee(userID);
   }
 
   getStatuses(){

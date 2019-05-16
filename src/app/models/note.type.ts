@@ -3,5 +3,6 @@ export interface Note {
     createdOn: Date,
     issueID: number,
     userID: number,
-    statusID: number
+    statusID: number,
+    text: string
 }
