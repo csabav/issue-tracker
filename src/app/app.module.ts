@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { jwtInterceptorProvider } from './helpers/jwt.interceptor';
@@ -44,7 +45,8 @@ let routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [
     jwtInterceptorProvider,

@@ -113,7 +113,7 @@ export class IssueComponent implements OnInit {
   OnStatusNoteSave() {
     this.statusNoteSubmitted = true;
 
-    if(this.statusNoteForm.invalid) {
+    if (this.statusNoteForm.invalid) {
       return;
     }
 

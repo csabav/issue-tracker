@@ -11,16 +11,16 @@
               <div class="form-group my-3">
                 <label for="assignedTo">Assigned To</label>
                 <select class="form-control" name="assignedTo" [(ngModel)]="selectedIssue.assignedToID">
-                  <option *ngFor="let user of users" [selected]="selectedIssue.assignedToID === user.id"
-                    [ngValue]="user.id">{{user.username}} ({{user.firstName}} {{user.lastName}})</option>
+                  <option *ngFor="let user of users" [selected]="selectedIssue.assignedToID === user.id" [ngValue]="user.id">{{user.username}}
+                    ({{user.firstName}} {{user.lastName}})</option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="category">Category</label>
                 <select class="form-control" name="category" [(ngModel)]="selectedIssue.categoryID">
-                  <option *ngFor="let category of categories | async"
-                    [selected]="selectedIssue.categoryID === category.id" [ngValue]="category.id">{{category.name}}
+                  <option *ngFor="let category of categories | async" [selected]="selectedIssue.categoryID === category.id"
+                    [ngValue]="category.id">{{category.name}}
                   </option>
                 </select>
               </div>
@@ -28,22 +28,21 @@
               <div class="form-group">
                 <label for="priority">Priority</label>
                 <select class="form-control" name="priority" [(ngModel)]="selectedIssue.priorityID">
-                  <option *ngFor="let priority of priorities | async"
-                    [selected]="selectedIssue.priorityID === priority.id" [ngValue]="priority.id">{{priority.name}}
+                  <option *ngFor="let priority of priorities | async" [selected]="selectedIssue.priorityID === priority.id"
+                    [ngValue]="priority.id">{{priority.name}}
                   </option>
                 </select>
               </div>
 
               <div class="form-group">
                 <label for="dueOn">Due Date:</label>
-                <input type="date" class="form-control" name="dueOn"
-                  [ngModel]="selectedIssue.dueOn | date: 'yyyy-MM-dd'" (ngModelChange)="selectedIssue.dueOn = $event">
+                <input type="date" class="form-control" name="dueOn" [ngModel]="selectedIssue.dueOn | date: 'yyyy-MM-dd'"
+                  (ngModelChange)="selectedIssue.dueOn = $event">
               </div>
 
               <div class="form-group">
                 <button type="submit" class="btn btn-primary" [disabled]="issueLoading">Save</button>
-                <img *ngIf="issueLoading" class="pl-2"
-                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <img *ngIf="issueLoading" class="pl-2" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
               </div>
               <div *ngIf="issueError" class="alert alert-danger">{{issueError}}</div>
             </form>
@@ -61,8 +60,7 @@
             <form [formGroup]="statusNoteForm" (ngSubmit)="OnStatusNoteSave()">
               <div class="form-group">
                 <label for="status">New Status:</label>
-                <select class="form-control" formControlName="status"
-                  [ngClass]="{'is-invalid': statusNoteSubmitted && snf.status.errors}">
+                <select class="form-control" formControlName="status" [ngClass]="{'is-invalid': statusNoteSubmitted && snf.status.errors}">
                   <option *ngFor="let status of statuses" [value]="status.id">
                     {{status.name}}</option>
                 </select>
@@ -73,8 +71,7 @@
 
               <div class="form-group">
                 <label for="notes">Notes:</label>
-                <textarea class="form-control" formControlName="notes" placeholder="Enter notes..." rows="4"
-                  [ngClass]="{'is-invalid': statusNoteSubmitted && snf.notes.errors}"></textarea>
+                <textarea class="form-control" formControlName="notes" placeholder="Enter notes..." rows="4" [ngClass]="{'is-invalid': statusNoteSubmitted && snf.notes.errors}"></textarea>
                 <div *ngIf="statusNoteSubmitted && snf.notes.errors" class="invalid-feedback">
                   <div *ngIf="snf.notes.errors.required">Notes are required</div>
                 </div>
@@ -82,8 +79,7 @@
 
               <div class="form-group">
                 <button type="submit" class="btn btn-primary" [disabled]="statusNoteLoading">Save</button>
-                <img *ngIf="statusNoteLoading" class="pl-2"
-                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <img *ngIf="statusNoteLoading" class="pl-2" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
               </div>
               <div *ngIf="statusNoteError" class="alert alert-danger">{{statusNoteError}}</div>
             </form>
@@ -101,8 +97,7 @@
         <div class="card" *ngFor="let note of notes | async">
           <div class="card-body">
             <dl>
-              <dt>{{getUserName(note.userID)}} - {{note.createdOn | date:'yyyy-MM-dd H:mm'}} -
-                {{getStatusName(note.statusID)}}</dt>
+              <dt>{{getUserName(note.userID)}} - {{note.createdOn | date:'yyyy-MM-dd H:mm'}} - {{getStatusName(note.statusID)}}</dt>
               <dd>{{note.text}}</dd>
             </dl>
           </div>
