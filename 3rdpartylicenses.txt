@@ -138,6 +138,14 @@ licenses; we recommend you read them, as their terms may differ from the
 terms above.
 
 
+ngx-bootstrap/component-loader
+
+ngx-bootstrap/dropdown
+
+ngx-bootstrap/positioning
+
+ngx-bootstrap/utils
+
 rxjs
 Apache-2.0
                                Apache License
