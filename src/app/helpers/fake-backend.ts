@@ -61,7 +61,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 let issue: Issue = req.body.issue;
                 let updateSuccess = false;
 
-                if (issue.id) {
+                if (issue.id > 0) {
+                    // update existing issue
                     for (let i = 0; i < this.fakeDb.Issues.length; i++) {
                         if (this.fakeDb.Issues[i].id === issue.id) {
                             this.fakeDb.Issues[i] = issue;
@@ -70,6 +71,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                             break;
                         }
                     }
+                }
+                else {
+                    // add new issue
+                    let maxIssue: Issue = _.maxBy(this.fakeDb.Issues, i => i.id);
+                    issue.id = ((maxIssue && maxIssue.id) || 0) + 1;
+
+                    this.fakeDb.Issues.push(issue);
+                    updateSuccess = true;
+                    this.save();
                 }
 
                 if (!updateSuccess) {
