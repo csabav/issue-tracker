@@ -55,9 +55,16 @@ export class IssueService {
     }
 
     addOrUpdateIssue(issue: Issue) {
-        return this.http.post<any>(environment.apiUrl + "/issues/update/", { issue: issue }).pipe(map(issue => {
-            return issue;
-        }));
+        if (issue.id) {
+            return this.http.put<any>(environment.apiUrl_REAL + "/api/issues/", issue).pipe(map(issue => {
+                return issue;
+            }));
+        }
+        else {
+            return this.http.post<any>(environment.apiUrl_REAL + "/api/issues/", issue).pipe(map(issue => {
+                return issue;
+            }));
+        }
     }
 
     addStatusNote(note: Note) {

@@ -13,7 +13,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     fakeDb: any;
 
     constructor() {
-        localStorage.clear();
+        // localStorage.clear();
         this.load();
     }
 
@@ -53,41 +53,41 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             //     });
             // }
 
-            if (req.url.endsWith("/issues/update/") && req.method === "POST") {
-                if (!isLoggedIn) {
-                    return unauthorized();
-                }
+            // if (req.url.endsWith("/issues/update/") && req.method === "POST") {
+            //     if (!isLoggedIn) {
+            //         return unauthorized();
+            //     }
 
-                let issue: Issue = req.body.issue;
-                let updateSuccess = false;
+            //     let issue: Issue = req.body.issue;
+            //     let updateSuccess = false;
 
-                if (issue.id > 0) {
-                    // update existing issue
-                    for (let i = 0; i < this.fakeDb.Issues.length; i++) {
-                        if (this.fakeDb.Issues[i].id === issue.id) {
-                            this.fakeDb.Issues[i] = issue;
-                            updateSuccess = true;
-                            this.save();
-                            break;
-                        }
-                    }
-                }
-                else {
-                    // add new issue
-                    let maxIssue: Issue = _.maxBy(this.fakeDb.Issues, i => i.id);
-                    issue.id = ((maxIssue && maxIssue.id) || 0) + 1;
+            //     if (issue.id > 0) {
+            //         // update existing issue
+            //         for (let i = 0; i < this.fakeDb.Issues.length; i++) {
+            //             if (this.fakeDb.Issues[i].id === issue.id) {
+            //                 this.fakeDb.Issues[i] = issue;
+            //                 updateSuccess = true;
+            //                 this.save();
+            //                 break;
+            //             }
+            //         }
+            //     }
+            //     else {
+            //         // add new issue
+            //         let maxIssue: Issue = _.maxBy(this.fakeDb.Issues, i => i.id);
+            //         issue.id = ((maxIssue && maxIssue.id) || 0) + 1;
 
-                    this.fakeDb.Issues.push(issue);
-                    updateSuccess = true;
-                    this.save();
-                }
+            //         this.fakeDb.Issues.push(issue);
+            //         updateSuccess = true;
+            //         this.save();
+            //     }
 
-                if (!updateSuccess) {
-                    return error("The issue you're trying to update doesn't exist");
-                }
+            //     if (!updateSuccess) {
+            //         return error("The issue you're trying to update doesn't exist");
+            //     }
 
-                return ok(issue);
-            }
+            //     return ok(issue);
+            // }
 
             // if (req.url.endsWith("/notes/add/") && req.method === "POST") {
             //     if (!isLoggedIn) {

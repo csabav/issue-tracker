@@ -109,7 +109,7 @@ export class IssueComponent implements OnInit {
       this.issueLoading = false;
     }, error => {
       this.issueLoading = false;
-      this.issueError = error.message;
+      this.issueError = error.error.message || error.error[0];
     });
   }
 
@@ -138,9 +138,11 @@ export class IssueComponent implements OnInit {
     this.issueService.addStatusNote(newNote).pipe(first()).subscribe(data => {
       this.statusNoteLoading = false;
       this.getNotes(this.selectedIssue.id);
+      this.getIssue(this.selectedIssue.id);
+      this.statusNoteForm.reset();
     }, error => {
       this.statusNoteLoading = false;
-      this.statusNoteError = error.message;
+      this.statusNoteError = error.error.message || error.error[0];
     });
   }
 }

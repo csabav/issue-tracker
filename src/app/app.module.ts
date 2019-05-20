@@ -51,8 +51,8 @@ let routes = [
   ],
   providers: [
     jwtInterceptorProvider,
-    errorInterceptorProvider,
-    fakeBackendProvider
+    //errorInterceptorProvider,
+    //fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
