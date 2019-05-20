@@ -22,7 +22,7 @@ export class AuthService {
     }
 
     login(username: string, password: string){
-        return this.http.post<any>(environment.apiUrl + "/users/auth", {username, password}).pipe(map(user => {
+        return this.http.post<any>(environment.apiUrl_REAL + "/api/users/authenticate", {username, password}).pipe(map(user => {
             if(user && user.token){
                 sessionStorage.setItem("currentUser", JSON.stringify(user));
                 this.currentUserSubject.next(user);

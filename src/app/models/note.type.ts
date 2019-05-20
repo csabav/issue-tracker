@@ -1,8 +1,8 @@
 export interface Note {
     id: number,
     createdOn: Date,
-    issueID: number,
-    userID: number,
-    statusID: number,
+    issueId: number,
+    userId: number,
+    statusId: number,
     text: string
 }

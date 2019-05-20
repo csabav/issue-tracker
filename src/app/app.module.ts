@@ -7,6 +7,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { jwtInterceptorProvider } from './helpers/jwt.interceptor';
+import { errorInterceptorProvider } from './helpers/error.interceptor';
 import { AuthGuard } from "./guards/auth.guard";
 
 import { AppComponent } from './app.component';
@@ -50,6 +51,7 @@ let routes = [
   ],
   providers: [
     jwtInterceptorProvider,
+    errorInterceptorProvider,
     fakeBackendProvider
   ],
   bootstrap: [AppComponent]

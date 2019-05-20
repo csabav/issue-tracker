@@ -24,7 +24,7 @@ export class IssueComponent implements OnInit {
   selectedIssue: Issue;
   users: User[];
   statuses: Status[];
-  categories: Observable<Category[]>;
+  categories: Category[];
   priorities: Observable<Priority[]>;
   notes: Observable<Note[]>;
 
@@ -44,9 +44,9 @@ export class IssueComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      let issueID = +params['id'];
-      this.getIssue(issueID);
-      this.getNotes(issueID);
+      let issueId = +params['id'];
+      this.getIssue(issueId);
+      this.getNotes(issueId);
     });
 
     this.getUsers();
@@ -61,11 +61,16 @@ export class IssueComponent implements OnInit {
   }
 
   getIssue(id: number) {
-    this.issueService.getSingleIssue(id).subscribe(i => this.selectedIssue = i);
+    this.issueService.getSingleIssue(id).subscribe(i => {
+      this.selectedIssue = i;
+      this.snf.status.setValue(this.selectedIssue.statusId);
+    });
   }
 
   getUsers() {
-    this.userService.getAll().subscribe(u => this.users = u);
+    this.userService.getAll().subscribe(u => {
+      this.users = u;
+    });
   }
 
   getStatuses() {
@@ -73,7 +78,9 @@ export class IssueComponent implements OnInit {
   }
 
   getCategories() {
-    this.categories = this.issueService.getIssueCategories();
+    this.issueService.getIssueCategories().subscribe(c => {
+      this.categories = c;
+    });
   }
 
   getPriorities() {
@@ -124,9 +131,9 @@ export class IssueComponent implements OnInit {
     let newNote: Note = {
       id: 0,
       createdOn: new Date(),
-      issueID: this.selectedIssue.id,
-      userID: this.authService.currentUserValue.id,
-      statusID: +this.snf.status.value,
+      issueId: this.selectedIssue.id,
+      userId: this.authService.currentUserValue.id,
+      statusId: +this.snf.status.value,
       text: this.snf.notes.value
     }
 

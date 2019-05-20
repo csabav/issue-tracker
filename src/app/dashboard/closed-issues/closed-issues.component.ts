@@ -24,18 +24,18 @@ export class ClosedIssuesComponent implements OnInit {
   }
 
   getIssues() {
-    let userID = this.authService.currentUserValue.id;
-    let closedStatusID = 4;
+    let userId = this.authService.currentUserValue.id;
+    let closedStatusId = 103;
 
-    this.issues = this.issueService.getIssuesByStatus({ userID: userID, statusID: closedStatusID });
+    this.issues = this.issueService.getIssuesByStatus({ userId: userId, statusId: closedStatusId });
   }
 
   getUsers() {
     this.userService.getAll().subscribe(u => this.users = u);
   }
 
-  getUserName(userID: number) {
-    let user = _.find(this.users, u => u.id === userID);
+  getUserName(userId: number) {
+    let user = _.find(this.users, u => u.id === userId);
     return user && user.username;
   }
 }

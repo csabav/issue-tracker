@@ -14,8 +14,8 @@
         <tr *ngFor="let issue of issues | async; let i = index">
           <td>{{i+1}}</td>
           <td><a routerLink="/issue/{{issue.id}}">{{issue.title}}</a></td>
-          <td>{{getStatusName(issue.statusID)}}</td>
-          <td>{{getUserName(issue.assignedToID)}}</td>
+          <td>{{getStatusName(issue.statusId)}}</td>
+          <td>{{getUserName(issue.assignedToId)}}</td>
         </tr>
         <tr *ngIf="(issues | async)?.length == 0">
           <td colspan="4" class="text-center">No issues</td>

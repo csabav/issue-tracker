@@ -89,11 +89,11 @@ export class NewIssueComponent implements OnInit {
       createdOn: new Date(),
       title: this.f.title.value,
       description: this.f.description.value,
-      assignedToID: this.f.assignedto.value.id,
-      createdByID: this.authService.currentUserValue.id,
-      statusID: 1, // created
-      categoryID: this.f.category.value.id,
-      priorityID: this.f.priority.value.id,
+      assignedToId: this.f.assignedto.value.id,
+      createdById: this.authService.currentUserValue.id,
+      statusId: 100, // created
+      categoryId: this.f.category.value.id,
+      priorityId: this.f.priority.value.id,
       dueOn: new Date(this.f.duedate.value)
     };
 

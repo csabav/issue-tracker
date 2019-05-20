@@ -19,39 +19,39 @@ export class IssueService {
     constructor(private http: HttpClient) { }
 
     getAllIssues() {
-        return this.http.get<Issue[]>(environment.apiUrl + "/issues");
+        return this.http.get<Issue[]>(environment.apiUrl_REAL + "/api/issues");
     }
 
     getSingleIssue(id: number) {
-        return this.http.get<Issue>(environment.apiUrl + "/issue/" + id);
+        return this.http.get<Issue>(environment.apiUrl_REAL + "/api/issues/" + id);
     }
 
-    getIssuesByAsignee(assignedToID: number) {
-        return this.http.get<Issue[]>(environment.apiUrl + "/issues/assignedto/" + assignedToID);
+    getIssuesByAsignee(assignedToId: number) {
+        return this.http.get<Issue[]>(environment.apiUrl_REAL + "/api/issues/assignedto/" + assignedToId);
     }
 
-    getIssuesByCreator(createdByID: number) {
-        return this.http.get<Issue[]>(environment.apiUrl + "/issues/createdby/" + createdByID);
+    getIssuesByCreator(createdById: number) {
+        return this.http.get<Issue[]>(environment.apiUrl_REAL + "/api/issues/createdby/" + createdById);
     }
 
-    getIssuesByStatus(options?: { userID?: number, statusID?: number }) {
-        return this.http.get<Issue[]>(environment.apiUrl + "/issues/status/" + options.statusID + "/user/" + options.userID);
+    getIssuesByStatus(options?: { userId?: number, statusId?: number }) {
+        return this.http.get<Issue[]>(environment.apiUrl_REAL + "/api/issues/status/" + options.statusId + "/user/" + options.userId);
     }
 
     getIssueStatuses() {
-        return this.http.get<Status[]>(environment.apiUrl + "/statuses/");
+        return this.http.get<Status[]>(environment.apiUrl_REAL + "/api/statuses/");
     }
 
     getIssueCategories() {
-        return this.http.get<Category[]>(environment.apiUrl + "/categories/");
+        return this.http.get<Category[]>(environment.apiUrl_REAL + "/api/categories/");
     }
 
     getIssuePriorities() {
-        return this.http.get<Priority[]>(environment.apiUrl + "/priorities/");
+        return this.http.get<Priority[]>(environment.apiUrl_REAL + "/api/priorities/");
     }
 
-    getIssueNotes(issueID: number) {
-        return this.http.get<Note[]>(environment.apiUrl + "/notes/issue/" + issueID);
+    getIssueNotes(issueId: number) {
+        return this.http.get<Note[]>(environment.apiUrl + "/notes/issue/" + issueId);
     }
 
     addOrUpdateIssue(issue: Issue) {

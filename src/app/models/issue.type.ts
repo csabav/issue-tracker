@@ -3,10 +3,10 @@ export interface Issue {
     createdOn: Date,
     title: string,
     description: string,
-    assignedToID: number,
-    createdByID: number,
-    statusID: number,
-    categoryID: number,
-    priorityID: number,
+    assignedToId: number,
+    createdById: number,
+    statusId: number,
+    categoryId: number,
+    priorityId: number,
     dueOn: Date
 }

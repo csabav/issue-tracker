@@ -27,17 +27,17 @@ export class CreatedByMeComponent implements OnInit {
   }
 
   getIssues() {
-    let userID = this.authService.currentUserValue.id;
+    let userId = this.authService.currentUserValue.id;
 
-    this.issues = this.issueService.getIssuesByCreator(userID);
+    this.issues = this.issueService.getIssuesByCreator(userId);
   }
 
   getStatuses(){
     this.issueService.getIssueStatuses().subscribe(s => this.statuses = s);
   }
 
-  getStatusName(statusID: number){
-    let status = _.find(this.statuses, s => s.id === statusID);
+  getStatusName(statusId: number){
+    let status = _.find(this.statuses, s => s.id === statusId);
     return status && status.name;
   }
 
@@ -45,8 +45,8 @@ export class CreatedByMeComponent implements OnInit {
     this.userService.getAll().subscribe(u => this.users = u);
   }
 
-  getUserName(userID: number){
-    let user = _.find(this.users, u => u.id === userID);
+  getUserName(userId: number){
+    let user = _.find(this.users, u => u.id === userId);
     return user && user.username;
   }
 

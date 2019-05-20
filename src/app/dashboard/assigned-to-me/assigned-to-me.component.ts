@@ -23,16 +23,17 @@ export class AssignedToMeComponent implements OnInit {
   }
 
   getIssues() {
-    let userID = this.authService.currentUserValue.id;
+    let userId = this.authService.currentUserValue.id;
     
-    this.issues = this.issueService.getIssuesByAsignee(userID);
+    this.issues = this.issueService.getIssuesByAsignee(userId);
   }
 
   getStatuses(){
     this.issueService.getIssueStatuses().subscribe(s => this.statuses = s);
   }
 
-  getStatusName(statusID: number){
-    return _.find(this.statuses, s => s.id === statusID).name;
+  getStatusName(statusId: number){
+    let status = _.find(this.statuses, s => s.id === statusId);
+    return status && status.name;
   }
 }
