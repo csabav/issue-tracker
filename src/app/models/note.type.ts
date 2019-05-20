@@ -1,6 +1,6 @@
 export interface Note {
-    id: number,
-    createdOn: Date,
+    id?: number,
+    createdOn?: Date,
     issueId: number,
     userId: number,
     statusId: number,

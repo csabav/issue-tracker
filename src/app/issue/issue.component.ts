@@ -129,8 +129,6 @@ export class IssueComponent implements OnInit {
     this.statusNoteLoading = true;
 
     let newNote: Note = {
-      id: 0,
-      createdOn: new Date(),
       issueId: this.selectedIssue.id,
       userId: this.authService.currentUserValue.id,
       statusId: +this.snf.status.value,

@@ -51,7 +51,7 @@ export class IssueService {
     }
 
     getIssueNotes(issueId: number) {
-        return this.http.get<Note[]>(environment.apiUrl + "/notes/issue/" + issueId);
+        return this.http.get<Note[]>(environment.apiUrl_REAL + "/api/notes/issue/" + issueId);
     }
 
     addOrUpdateIssue(issue: Issue) {
@@ -61,7 +61,7 @@ export class IssueService {
     }
 
     addStatusNote(note: Note) {
-        return this.http.post<any>(environment.apiUrl + "/notes/add/", {note: note}).pipe(map(note => {
+        return this.http.post<any>(environment.apiUrl_REAL + "/api/notes/", note).pipe(map(note => {
             return note;
         }));
     }

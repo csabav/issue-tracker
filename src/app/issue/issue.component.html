@@ -6,7 +6,7 @@
           <div class="card-header">{{selectedIssue.title}} - {{getStatusName(selectedIssue.statusId)}}</div>
           <div class="card-body">
             <form (ngSubmit)="OnSaveIssue()">
-              <pre class="border rounded">{{selectedIssue.description}}</pre>
+              <pre class="border rounded" [innerHTML]="selectedIssue.description"></pre>
 
               <div class="form-group my-3">
                 <label for="assignedTo">Assigned To</label>

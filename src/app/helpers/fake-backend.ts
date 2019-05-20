@@ -13,7 +13,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     fakeDb: any;
 
     constructor() {
-        // localStorage.clear();
+        localStorage.clear();
         this.load();
     }
 
@@ -89,33 +89,33 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return ok(issue);
             }
 
-            if (req.url.endsWith("/notes/add/") && req.method === "POST") {
-                if (!isLoggedIn) {
-                    return unauthorized();
-                }
+            // if (req.url.endsWith("/notes/add/") && req.method === "POST") {
+            //     if (!isLoggedIn) {
+            //         return unauthorized();
+            //     }
 
-                let note: Note = req.body.note;
-                let issue: Issue = _.find(this.fakeDb.Issues, i => i.id === note.issueId);
+            //     let note: Note = req.body.note;
+            //     let issue: Issue = _.find(this.fakeDb.Issues, i => i.id === note.issueId);
 
-                if (!issue) {
-                    return error("The issue you're trying to update doesn't exist");
-                }
+            //     if (!issue) {
+            //         return error("The issue you're trying to update doesn't exist");
+            //     }
 
-                for (let i = 0; i < this.fakeDb.Issues.length; i++) {
-                    if (this.fakeDb.Issues[i].id === issue.id) {
-                        this.fakeDb.Issues[i].statusId = note.statusId;
-                        this.save();
-                        break;
-                    }
-                }
+            //     for (let i = 0; i < this.fakeDb.Issues.length; i++) {
+            //         if (this.fakeDb.Issues[i].id === issue.id) {
+            //             this.fakeDb.Issues[i].statusId = note.statusId;
+            //             this.save();
+            //             break;
+            //         }
+            //     }
 
-                let maxNote: Note = _.maxBy(this.fakeDb.Notes, n => n.id);
-                note.id = ((maxNote && maxNote.id) || 0) + 1;
-                this.fakeDb.Notes.push(note);
-                this.save();
+            //     let maxNote: Note = _.maxBy(this.fakeDb.Notes, n => n.id);
+            //     note.id = ((maxNote && maxNote.id) || 0) + 1;
+            //     this.fakeDb.Notes.push(note);
+            //     this.save();
 
-                return ok(note);
-            }
+            //     return ok(note);
+            // }
 
             // if (req.url.endsWith("/users") && req.method === "GET") {
             //     // TODO: to properly do this we need an error interceptor
@@ -140,16 +140,16 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             //     return ok(userResults);
             // }
 
-            if (req.url.match(/\/notes\/issue\/(\d+)/) && req.method === "GET") {
-                if (!isLoggedIn) {
-                    return unauthorized();
-                }
+            // if (req.url.match(/\/notes\/issue\/(\d+)/) && req.method === "GET") {
+            //     if (!isLoggedIn) {
+            //         return unauthorized();
+            //     }
 
-                let urlParts = req.url.split('/');
-                let id = +urlParts[urlParts.length - 1];
+            //     let urlParts = req.url.split('/');
+            //     let id = +urlParts[urlParts.length - 1];
 
-                return ok(_.orderBy(_.filter(this.fakeDb.Notes, n => n.issueId === id), ['id'], ['desc']));
-            }
+            //     return ok(_.orderBy(_.filter(this.fakeDb.Notes, n => n.issueId === id), ['id'], ['desc']));
+            // }
 
             // if (req.url.endsWith("/issues") && req.method === "GET") {
             //     if (!isLoggedIn) {
