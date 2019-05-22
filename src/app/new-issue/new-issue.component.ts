@@ -11,20 +11,48 @@ import { IssueService } from '../services/issue.service';
 import { Issue } from '../models/issue.type';
 import { Router } from '@angular/router';
 
+/**
+ * The place for creating new issues
+ */
 @Component({
   selector: 'app-new-issue',
   templateUrl: './new-issue.component.html',
   styleUrls: ['./new-issue.component.css']
 })
 export class NewIssueComponent implements OnInit {
+  /**
+   * The users that the new issue can be assigned to
+   */
   users: User[];
-  statuses: Status[];
+
+  /**
+   * The categories the new issue can pick up
+   */
   categories: Category[];
+
+  /**
+   * The priorities the new issue can be assigned to
+   */
   priorities: Priority[];
 
+  /**
+   * The Reactive Form object
+   */
   issueForm: FormGroup;
+  
+  /**
+   * Is true if the Save button was clicked, helps displaying client-side validation errors on the input fields
+   */
   submitted = false;
+
+  /**
+   * Is true if the Save button was clicked and the saving process started running
+   */
   loading = false;
+
+  /**
+   * The error messages coming from the {@link IssueService} are stored here
+   */
   error = "";
 
   constructor(private formBuilder: FormBuilder,
@@ -48,10 +76,17 @@ export class NewIssueComponent implements OnInit {
     });
   }
 
+  /**
+   * Gets all the controls from the form
+   */
   get f() {
     return this.issueForm.controls;
   }
 
+
+  /**
+   * Retrieves the priorities using the {@link IssueService} and sets the default value in the priorities dropdown
+   */
   getPriorities() {
     this.issueService.getIssuePriorities().subscribe(p => {
       this.priorities = p;
@@ -59,6 +94,9 @@ export class NewIssueComponent implements OnInit {
     });
   }
 
+  /**
+   * Retrieves the categories using the {@link IssueService} and sets the default value in the categories dropdown
+   */
   getCategories() {
     this.issueService.getIssueCategories().subscribe(c => {
       this.categories = c;
@@ -66,6 +104,9 @@ export class NewIssueComponent implements OnInit {
     });
   }
 
+  /**
+   * Retrieves the users using the {@link IssueService} and sets the default value in the users dropdown
+   */
   getUsers() {
     this.userService.getAll().subscribe(u => {
       this.users = u;
@@ -73,6 +114,10 @@ export class NewIssueComponent implements OnInit {
     });
   }
 
+  /**
+   * Executed when the Save button is clicked. Validates the form and starts the saving process using the {@link IssueService}.
+   * If the process was successful it navigates the user to the issue detail page
+   */
   OnSubmit() {
     this.submitted = true;
 

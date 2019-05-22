@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Route } from '@angular/router';
+import { RouterModule, Route, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
-import { fakeBackendProvider } from './helpers/fake-backend';
 import { jwtInterceptorProvider } from './helpers/jwt.interceptor';
 import { errorInterceptorProvider } from './helpers/error.interceptor';
 import { AuthGuard } from "./guards/auth.guard";
@@ -20,7 +19,7 @@ import { AssignedToMeComponent } from './dashboard/assigned-to-me/assigned-to-me
 import { CreatedByMeComponent } from './dashboard/created-by-me/created-by-me.component';
 import { ClosedIssuesComponent } from './dashboard/closed-issues/closed-issues.component';
 
-let routes = [
+const routes: Routes = [
   { path: "", component: DashboardComponent, canActivate: [AuthGuard] },
   { path: "newissue", component: NewIssueComponent, canActivate: [AuthGuard] },
   { path: "options", component: OptionsComponent, canActivate: [AuthGuard] },
@@ -29,6 +28,12 @@ let routes = [
   { path: "**", redirectTo: "" }
 ];
 
+/**
+ * 
+ * The bootstrapper module
+ *
+ * @class AppModule
+ */
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,8 +56,7 @@ let routes = [
   ],
   providers: [
     jwtInterceptorProvider,
-    //errorInterceptorProvider,
-    //fakeBackendProvider
+    //errorInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

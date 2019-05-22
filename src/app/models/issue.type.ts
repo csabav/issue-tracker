@@ -1,3 +1,7 @@
+/**
+ * The Issue interface
+ *
+ */
 export interface Issue {
     id: number,
     createdOn: Date,

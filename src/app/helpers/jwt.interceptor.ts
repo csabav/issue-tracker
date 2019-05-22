@@ -3,6 +3,10 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HTTP_INTERCEPTORS
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
+/**
+ * An HttpInterceptor to always add the auth token to the request header
+ * This way we can easily use the API's functions
+ */
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
     constructor(private authService: AuthService){}

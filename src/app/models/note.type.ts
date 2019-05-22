@@ -1,3 +1,7 @@
+/**
+ * The Note interface
+ *
+ */
 export interface Note {
     id?: number,
     createdOn?: Date,
