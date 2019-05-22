@@ -1,0 +1,1130 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>issue-tracker documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">issue-tracker documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>NewIssueComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/new-issue/new-issue.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The place for creating new issues</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-new-issue</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./new-issue.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./new-issue.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categories">categories</a>
+                            </li>
+                            <li>
+                                <a href="#error">error</a>
+                            </li>
+                            <li>
+                                <a href="#issueForm">issueForm</a>
+                            </li>
+                            <li>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                <a href="#priorities">priorities</a>
+                            </li>
+                            <li>
+                                <a href="#submitted">submitted</a>
+                            </li>
+                            <li>
+                                <a href="#users">users</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getCategories">getCategories</a>
+                            </li>
+                            <li>
+                                <a href="#getPriorities">getPriorities</a>
+                            </li>
+                            <li>
+                                <a href="#getUsers">getUsers</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#OnSubmit">OnSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#f">f</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, userService: <a href="../injectables/UserService.html">UserService</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, issueService: <a href="../injectables/IssueService.html">IssueService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/new-issue/new-issue.component.ts:56</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>issueService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/IssueService.html" target="_self" >IssueService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCategories"></a>
+                    <span class="name">
+                        <b>
+                            getCategories
+                        </b>
+                        <a href="#getCategories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCategories()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/new-issue/new-issue.component.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the categories using the <a href="../injectables/IssueService.html">IssueService</a> and sets the default value in the categories dropdown</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPriorities"></a>
+                    <span class="name">
+                        <b>
+                            getPriorities
+                        </b>
+                        <a href="#getPriorities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPriorities()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/new-issue/new-issue.component.ts:90</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the priorities using the <a href="../injectables/IssueService.html">IssueService</a> and sets the default value in the priorities dropdown</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsers"></a>
+                    <span class="name">
+                        <b>
+                            getUsers
+                        </b>
+                        <a href="#getUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/new-issue/new-issue.component.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the users using the <a href="../injectables/IssueService.html">IssueService</a> and sets the default value in the users dropdown</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/new-issue/new-issue.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OnSubmit"></a>
+                    <span class="name">
+                        <b>
+                            OnSubmit
+                        </b>
+                        <a href="#OnSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>OnSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/new-issue/new-issue.component.ts:121</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Executed when the Save button is clicked. Validates the form and starts the saving process using the <a href="../injectables/IssueService.html">IssueService</a>.
+If the process was successful it navigates the user to the issue detail page</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="categories"></a>
+                        <span class="name">
+                            <b>
+                            categories</b>
+                            <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Category.html" target="_self" >Category[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/new-issue/new-issue.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The categories the new issue can pick up</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="error"></a>
+                        <span class="name">
+                            <b>
+                            error</b>
+                            <a href="#error"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/new-issue/new-issue.component.ts:56</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The error messages coming from the <a href="../injectables/IssueService.html">IssueService</a> are stored here</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="issueForm"></a>
+                        <span class="name">
+                            <b>
+                            issueForm</b>
+                            <a href="#issueForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/new-issue/new-issue.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The Reactive Form object</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/new-issue/new-issue.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Is true if the Save button was clicked and the saving process started running</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="priorities"></a>
+                        <span class="name">
+                            <b>
+                            priorities</b>
+                            <a href="#priorities"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Priority.html" target="_self" >Priority[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/new-issue/new-issue.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The priorities the new issue can be assigned to</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submitted"></a>
+                        <span class="name">
+                            <b>
+                            submitted</b>
+                            <a href="#submitted"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/new-issue/new-issue.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Is true if the Save button was clicked, helps displaying client-side validation errors on the input fields</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="users"></a>
+                        <span class="name">
+                            <b>
+                            users</b>
+                            <a href="#users"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/new-issue/new-issue.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The users that the new issue can be assigned to</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f"></a>
+                        <span class="name"><b>f</b><a href="#f"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/new-issue/new-issue.component.ts:82</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Gets all the controls from the form</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import { User } from &#x27;../models/user.type&#x27;;
+import { Status } from &#x27;../models/status.type&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { Category } from &#x27;../models/category.type&#x27;;
+import { Priority } from &#x27;../models/priority.type&#x27;;
+import { UserService } from &#x27;../services/user.service&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+import { IssueService } from &#x27;../services/issue.service&#x27;;
+import { Issue } from &#x27;../models/issue.type&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+/**
+ * The place for creating new issues
+ */
+@Component({
+  selector: &#x27;app-new-issue&#x27;,
+  templateUrl: &#x27;./new-issue.component.html&#x27;,
+  styleUrls: [&#x27;./new-issue.component.css&#x27;]
+})
+export class NewIssueComponent implements OnInit {
+  /**
+   * The users that the new issue can be assigned to
+   */
+  users: User[];
+
+  /**
+   * The categories the new issue can pick up
+   */
+  categories: Category[];
+
+  /**
+   * The priorities the new issue can be assigned to
+   */
+  priorities: Priority[];
+
+  /**
+   * The Reactive Form object
+   */
+  issueForm: FormGroup;
+  
+  /**
+   * Is true if the Save button was clicked, helps displaying client-side validation errors on the input fields
+   */
+  submitted &#x3D; false;
+
+  /**
+   * Is true if the Save button was clicked and the saving process started running
+   */
+  loading &#x3D; false;
+
+  /**
+   * The error messages coming from the {@link IssueService} are stored here
+   */
+  error &#x3D; &quot;&quot;;
+
+  constructor(private formBuilder: FormBuilder,
+    private userService: UserService,
+    private authService: AuthService,
+    private issueService: IssueService,
+    private router: Router) { }
+
+  ngOnInit() {
+    this.getUsers();
+    this.getCategories();
+    this.getPriorities();
+
+    this.issueForm &#x3D; this.formBuilder.group({
+      title: [&quot;&quot;, Validators.required],
+      description: [&quot;&quot;, Validators.required],
+      assignedto: [&quot;&quot;, Validators.required],
+      category: [&quot;&quot;, Validators.required],
+      priority: [&quot;&quot;, Validators.required],
+      duedate: [&quot;&quot;, Validators.required]
+    });
+  }
+
+  /**
+   * Gets all the controls from the form
+   */
+  get f() {
+    return this.issueForm.controls;
+  }
+
+
+  /**
+   * Retrieves the priorities using the {@link IssueService} and sets the default value in the priorities dropdown
+   */
+  getPriorities() {
+    this.issueService.getIssuePriorities().subscribe(p &#x3D;&gt; {
+      this.priorities &#x3D; p;
+      this.f.priority.setValue(this.priorities[0]);
+    });
+  }
+
+  /**
+   * Retrieves the categories using the {@link IssueService} and sets the default value in the categories dropdown
+   */
+  getCategories() {
+    this.issueService.getIssueCategories().subscribe(c &#x3D;&gt; {
+      this.categories &#x3D; c;
+      this.f.category.setValue(this.categories[0]);
+    });
+  }
+
+  /**
+   * Retrieves the users using the {@link IssueService} and sets the default value in the users dropdown
+   */
+  getUsers() {
+    this.userService.getAll().subscribe(u &#x3D;&gt; {
+      this.users &#x3D; u;
+      this.f.assignedto.setValue(this.users[0]);
+    });
+  }
+
+  /**
+   * Executed when the Save button is clicked. Validates the form and starts the saving process using the {@link IssueService}.
+   * If the process was successful it navigates the user to the issue detail page
+   */
+  OnSubmit() {
+    this.submitted &#x3D; true;
+
+    if (this.issueForm.invalid) {
+      return;
+    }
+
+    this.submitted &#x3D; false;
+    this.error &#x3D; &quot;&quot;;
+    this.loading &#x3D; true;
+
+    let newIssue: any &#x3D; {
+      title: this.f.title.value,
+      description: this.f.description.value,
+      assignedToId: this.f.assignedto.value.id,
+      createdById: this.authService.currentUserValue.id,
+      categoryId: this.f.category.value.id,
+      priorityId: this.f.priority.value.id,
+      dueOn: new Date(this.f.duedate.value)
+    };
+
+    this.issueService.addOrUpdateIssue(newIssue).subscribe(data &#x3D;&gt; {
+      this.router.navigate([&quot;/issue/&quot; + data.id]);
+    }, error &#x3D;&gt; {
+      this.error &#x3D; error.error.message;
+      this.loading &#x3D; false;
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+  &lt;div class&#x3D;&quot;card-header&quot;&gt;Create New Issue&lt;/div&gt;
+  &lt;div class&#x3D;&quot;card-body&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;issueForm&quot; (ngSubmit)&#x3D;&quot;OnSubmit()&quot;&gt;
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;title&quot;&gt;Title&lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;title&quot; placeholder&#x3D;&quot;Enter title...&quot;
+          [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: submitted &amp;&amp; f.title.errors}&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.title.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;f.title.errors.required&quot;&gt;Title is required&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;description&quot;&gt;Description&lt;/label&gt;
+        &lt;textarea class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;description&quot; rows&#x3D;&quot;10&quot; placeholder&#x3D;&quot;Enter description...&quot;
+          [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: submitted &amp;&amp; f.description.errors}&quot;&gt;&lt;/textarea&gt;
+        &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.description.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;f.description.errors.required&quot;&gt;Description is required&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;assignedto&quot;&gt;Assigned To&lt;/label&gt;
+        &lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;assignedto&quot;
+          [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: submitted &amp;&amp; f.assignedto.errors}&quot;&gt;
+          &lt;option *ngFor&#x3D;&quot;let user of users&quot; [ngValue]&#x3D;&quot;user&quot;&gt;{{user.username}} ({{user.firstName}} {{user.lastName}})
+          &lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.assignedto.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;f.assignedto.errors.required&quot;&gt;User is required&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;category&quot;&gt;Category&lt;/label&gt;
+        &lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;category&quot;
+          [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: submitted &amp;&amp; f.category.errors}&quot;&gt;
+          &lt;option *ngFor&#x3D;&quot;let category of categories&quot; [ngValue]&#x3D;&quot;category&quot;&gt;{{category.name}}&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.category.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;f.category.errors.required&quot;&gt;Category is required&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;priority&quot;&gt;Priority&lt;/label&gt;
+        &lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;priority&quot;
+          [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: submitted &amp;&amp; f.priority.errors}&quot;&gt;
+          &lt;option *ngFor&#x3D;&quot;let priority of priorities&quot; [ngValue]&#x3D;&quot;priority&quot;&gt;{{priority.name}}&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.priority.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;f.priority.errors.required&quot;&gt;Priority is required&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;duedate&quot;&gt;Due Date&lt;/label&gt;
+        &lt;input type&#x3D;&#x27;date&#x27; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;duedate&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.duedate.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+          &lt;div *ngIf&#x3D;&quot;f.duedate.errors.required&quot;&gt;Due date is required&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Save&lt;/button&gt;
+        &lt;img *ngIf&#x3D;&quot;loading&quot; class&#x3D;&quot;pl-2&quot;
+          src&#x3D;&quot;data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA&#x3D;&#x3D;&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./new-issue.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">  <div class="card-header">Create New Issue</div>  <div class="card-body">    <form [formGroup]="issueForm" (ngSubmit)="OnSubmit()">      <div class="form-group">        <label for="title">Title</label>        <input type="text" class="form-control" formControlName="title" placeholder="Enter title..."          [ngClass]="{\'is-invalid\': submitted && f.title.errors}">        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">          <div *ngIf="f.title.errors.required">Title is required</div>        </div>      </div>      <div class="form-group">        <label for="description">Description</label>        <textarea class="form-control" formControlName="description" rows="10" placeholder="Enter description..."          [ngClass]="{\'is-invalid\': submitted && f.description.errors}"></textarea>        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">          <div *ngIf="f.description.errors.required">Description is required</div>        </div>      </div>      <div class="form-group">        <label for="assignedto">Assigned To</label>        <select class="form-control" formControlName="assignedto"          [ngClass]="{\'is-invalid\': submitted && f.assignedto.errors}">          <option *ngFor="let user of users" [ngValue]="user">{{user.username}} ({{user.firstName}} {{user.lastName}})          </option>        </select>        <div *ngIf="submitted && f.assignedto.errors" class="invalid-feedback">          <div *ngIf="f.assignedto.errors.required">User is required</div>        </div>      </div>      <div class="form-group">        <label for="category">Category</label>        <select class="form-control" formControlName="category"          [ngClass]="{\'is-invalid\': submitted && f.category.errors}">          <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>        </select>        <div *ngIf="submitted && f.category.errors" class="invalid-feedback">          <div *ngIf="f.category.errors.required">Category is required</div>        </div>      </div>      <div class="form-group">        <label for="priority">Priority</label>        <select class="form-control" formControlName="priority"          [ngClass]="{\'is-invalid\': submitted && f.priority.errors}">          <option *ngFor="let priority of priorities" [ngValue]="priority">{{priority.name}}</option>        </select>        <div *ngIf="submitted && f.priority.errors" class="invalid-feedback">          <div *ngIf="f.priority.errors.required">Priority is required</div>        </div>      </div>      <div class="form-group">        <label for="duedate">Due Date</label>        <input type=\'date\' class="form-control" formControlName="duedate">        <div *ngIf="submitted && f.duedate.errors" class="invalid-feedback">          <div *ngIf="f.duedate.errors.required">Due date is required</div>        </div>      </div>      <div class="form-group">        <button type="submit" class="btn btn-primary">Save</button>        <img *ngIf="loading" class="pl-2"          src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />      </div>    </form>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssignedToMeComponent', 'selector': 'app-assigned-to-me'},{'name': 'ClosedIssuesComponent', 'selector': 'app-closed-issues'},{'name': 'CreatedByMeComponent', 'selector': 'app-created-by-me'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'IssueComponent', 'selector': 'app-issue'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewIssueComponent', 'selector': 'app-new-issue'},{'name': 'OptionsComponent', 'selector': 'app-options'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NewIssueComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewIssueComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

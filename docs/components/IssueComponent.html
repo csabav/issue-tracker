@@ -1,0 +1,1823 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>issue-tracker documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">issue-tracker documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>IssueComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/issue/issue.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The issue detail component. Users can view and update an issue here</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-issue</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./issue.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./issue.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categories">categories</a>
+                            </li>
+                            <li>
+                                <a href="#issueError">issueError</a>
+                            </li>
+                            <li>
+                                <a href="#issueLoading">issueLoading</a>
+                            </li>
+                            <li>
+                                <a href="#notes">notes</a>
+                            </li>
+                            <li>
+                                <a href="#priorities">priorities</a>
+                            </li>
+                            <li>
+                                <a href="#selectedIssue">selectedIssue</a>
+                            </li>
+                            <li>
+                                <a href="#statuses">statuses</a>
+                            </li>
+                            <li>
+                                <a href="#statusNoteError">statusNoteError</a>
+                            </li>
+                            <li>
+                                <a href="#statusNoteForm">statusNoteForm</a>
+                            </li>
+                            <li>
+                                <a href="#statusNoteLoading">statusNoteLoading</a>
+                            </li>
+                            <li>
+                                <a href="#statusNoteSubmitted">statusNoteSubmitted</a>
+                            </li>
+                            <li>
+                                <a href="#users">users</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getCategories">getCategories</a>
+                            </li>
+                            <li>
+                                <a href="#getIssue">getIssue</a>
+                            </li>
+                            <li>
+                                <a href="#getNotes">getNotes</a>
+                            </li>
+                            <li>
+                                <a href="#getPriorities">getPriorities</a>
+                            </li>
+                            <li>
+                                <a href="#getStatuses">getStatuses</a>
+                            </li>
+                            <li>
+                                <a href="#getStatusName">getStatusName</a>
+                            </li>
+                            <li>
+                                <a href="#getUserName">getUserName</a>
+                            </li>
+                            <li>
+                                <a href="#getUsers">getUsers</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#OnSaveIssue">OnSaveIssue</a>
+                            </li>
+                            <li>
+                                <a href="#OnStatusNoteSave">OnStatusNoteSave</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#snf">snf</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, issueService: <a href="../injectables/IssueService.html">IssueService</a>, userService: <a href="../injectables/UserService.html">UserService</a>, formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/issue/issue.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>issueService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/IssueService.html" target="_self" >IssueService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCategories"></a>
+                    <span class="name">
+                        <b>
+                            getCategories
+                        </b>
+                        <a href="#getCategories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCategories()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">src/app/issue/issue.component.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the categories using the <a href="../injectables/IssueService.html">IssueService</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getIssue"></a>
+                    <span class="name">
+                        <b>
+                            getIssue
+                        </b>
+                        <a href="#getIssue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getIssue(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/issue/issue.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNotes"></a>
+                    <span class="name">
+                        <b>
+                            getNotes
+                        </b>
+                        <a href="#getNotes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getNotes(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/app/issue/issue.component.ts:153</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the status notes that belong to the selected issue using the <a href="../injectables/IssueService.html">IssueService</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPriorities"></a>
+                    <span class="name">
+                        <b>
+                            getPriorities
+                        </b>
+                        <a href="#getPriorities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPriorities()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">src/app/issue/issue.component.ts:146</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the priorities using the <a href="../injectables/IssueService.html">IssueService</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStatuses"></a>
+                    <span class="name">
+                        <b>
+                            getStatuses
+                        </b>
+                        <a href="#getStatuses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStatuses()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/issue/issue.component.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the statuses using the <a href="../injectables/IssueService.html">IssueService</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStatusName"></a>
+                    <span class="name">
+                        <b>
+                            getStatusName
+                        </b>
+                        <a href="#getStatusName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStatusName(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/app/issue/issue.component.ts:174</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the name of the given status ID</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The status name</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserName"></a>
+                    <span class="name">
+                        <b>
+                            getUserName
+                        </b>
+                        <a href="#getUserName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserName(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/issue/issue.component.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the username of the given user ID</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The username</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsers"></a>
+                    <span class="name">
+                        <b>
+                            getUsers
+                        </b>
+                        <a href="#getUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/issue/issue.component.ts:121</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieves the users using the <a href="../injectables/IssueService.html">IssueService</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/issue/issue.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OnSaveIssue"></a>
+                    <span class="name">
+                        <b>
+                            OnSaveIssue
+                        </b>
+                        <a href="#OnSaveIssue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>OnSaveIssue()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">src/app/issue/issue.component.ts:182</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Executed when clicking on the Save button to update the selected issue&#39;s details. Validates the form and starts the saving process.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OnStatusNoteSave"></a>
+                    <span class="name">
+                        <b>
+                            OnStatusNoteSave
+                        </b>
+                        <a href="#OnStatusNoteSave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>OnStatusNoteSave()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="204"
+                            class="link-to-prism">src/app/issue/issue.component.ts:204</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Executed when clicking on the Save button to add a new status note. Validates the form and starts the saving process. Also updates the UI in the end to display the newly added note.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="categories"></a>
+                        <span class="name">
+                            <b>
+                            categories</b>
+                            <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Category.html" target="_self" >Category[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/issue/issue.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The categories that the issue can pick up</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="issueError"></a>
+                        <span class="name">
+                            <b>
+                            issueError</b>
+                            <a href="#issueError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/issue/issue.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Stores the error messages coming from the <a href="../injectables/IssueService.html">IssueService</a></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="issueLoading"></a>
+                        <span class="name">
+                            <b>
+                            issueLoading</b>
+                            <a href="#issueLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/issue/issue.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Is true when the Save button was clicked to update the selected issue</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notes"></a>
+                        <span class="name">
+                            <b>
+                            notes</b>
+                            <a href="#notes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Note.html" target="_self" >Observable&lt;Note[]&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/issue/issue.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The notes that were added to the selected issue</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="priorities"></a>
+                        <span class="name">
+                            <b>
+                            priorities</b>
+                            <a href="#priorities"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Priority.html" target="_self" >Observable&lt;Priority[]&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/issue/issue.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The priorities the issue can be assigned to</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedIssue"></a>
+                        <span class="name">
+                            <b>
+                            selectedIssue</b>
+                            <a href="#selectedIssue"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Issue.html" target="_self" >Issue</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/issue/issue.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The selected issue currently displayed on the page</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="statuses"></a>
+                        <span class="name">
+                            <b>
+                            statuses</b>
+                            <a href="#statuses"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Status.html" target="_self" >Status[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/issue/issue.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The statuses that the issue can be assigned to</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="statusNoteError"></a>
+                        <span class="name">
+                            <b>
+                            statusNoteError</b>
+                            <a href="#statusNoteError"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/issue/issue.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Stores the error messages coming from the <a href="../injectables/IssueService.html">IssueService</a> after a failed status note creation</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="statusNoteForm"></a>
+                        <span class="name">
+                            <b>
+                            statusNoteForm</b>
+                            <a href="#statusNoteForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/issue/issue.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The Reactive Form object for adding a new status note to the issue</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="statusNoteLoading"></a>
+                        <span class="name">
+                            <b>
+                            statusNoteLoading</b>
+                            <a href="#statusNoteLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/issue/issue.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Is true when the Save button was clicked to add a new status note and the saving process started running</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="statusNoteSubmitted"></a>
+                        <span class="name">
+                            <b>
+                            statusNoteSubmitted</b>
+                            <a href="#statusNoteSubmitted"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/issue/issue.component.ts:75</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Is true if the Save button was clicked to add a new status note, helps displaying client-side validation errors on the input fields</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="users"></a>
+                        <span class="name">
+                            <b>
+                            users</b>
+                            <a href="#users"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/issue/issue.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The users that the issue can be assigned to</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="snf"></a>
+                        <span class="name"><b>snf</b><a href="#snf"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>snf()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="197" class="link-to-prism">src/app/issue/issue.component.ts:197</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Gets all the controls from the status note form</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+
+import { Issue } from &#x27;../models/issue.type&#x27;;
+import { IssueService } from &#x27;../services/issue.service&#x27;;
+import { UserService } from &#x27;../services/user.service&#x27;;
+import { User } from &#x27;../models/user.type&#x27;;
+import * as _ from &#x27;lodash&#x27;;
+import { Category } from &#x27;../models/category.type&#x27;;
+import { Priority } from &#x27;../models/priority.type&#x27;;
+import { Status } from &#x27;../models/status.type&#x27;;
+import { Note } from &#x27;../models/note.type&#x27;;
+import { map, first } from &#x27;rxjs/operators&#x27;;
+import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+
+/**
+ * The issue detail component. Users can view and update an issue here
+ */
+@Component({
+  selector: &#x27;app-issue&#x27;,
+  templateUrl: &#x27;./issue.component.html&#x27;,
+  styleUrls: [&#x27;./issue.component.css&#x27;]
+})
+export class IssueComponent implements OnInit {
+  /**
+   * The selected issue currently displayed on the page
+   */
+  selectedIssue: Issue;
+  
+  /**
+   * The users that the issue can be assigned to
+   */
+  users: User[];
+  
+  /**
+   * The statuses that the issue can be assigned to
+   */
+  statuses: Status[];
+
+  /**
+   * The categories that the issue can pick up
+   */
+  categories: Category[];
+
+  /**
+   * The priorities the issue can be assigned to
+   */
+  priorities: Observable&lt;Priority[]&gt;;
+
+  /**
+   * The notes that were added to the selected issue
+   */
+  notes: Observable&lt;Note[]&gt;;
+
+  /**
+   * Is true when the Save button was clicked to update the selected issue
+   */
+  issueLoading &#x3D; false;
+  
+  /**
+   * Stores the error messages coming from the {@link IssueService}
+   */
+  issueError &#x3D; &quot;&quot;;
+
+  /**
+   * The Reactive Form object for adding a new status note to the issue
+   */
+  statusNoteForm: FormGroup;
+
+  /**
+   * Is true if the Save button was clicked to add a new status note, helps displaying client-side validation errors on the input fields
+   */
+  statusNoteSubmitted &#x3D; false;
+
+  /**
+   * Is true when the Save button was clicked to add a new status note and the saving process started running
+   */
+  statusNoteLoading &#x3D; false;
+
+  /**
+   * Stores the error messages coming from the {@link IssueService} after a failed status note creation
+   */
+  statusNoteError &#x3D; &quot;&quot;;
+
+  constructor(private route: ActivatedRoute,
+    private issueService: IssueService,
+    private userService: UserService,
+    private formBuilder: FormBuilder,
+    private authService: AuthService) { }
+
+  ngOnInit() {
+    this.route.params.subscribe(params &#x3D;&gt; {
+      let issueId &#x3D; +params[&#x27;id&#x27;];
+      this.getIssue(issueId);
+      this.getNotes(issueId);
+    });
+
+    this.getUsers();
+    this.getStatuses();
+    this.getCategories();
+    this.getPriorities();
+
+    this.statusNoteForm &#x3D; this.formBuilder.group({
+      status: [&quot;&quot;, Validators.required],
+      notes: [&quot;&quot;, Validators.required],
+    });
+  }
+
+  getIssue(id: number) {
+    this.issueService.getSingleIssue(id).subscribe(i &#x3D;&gt; {
+      this.selectedIssue &#x3D; i;
+      this.snf.status.setValue(this.selectedIssue.statusId);
+    });
+  }
+
+  /**
+   * Retrieves the users using the {@link IssueService}
+   */
+  getUsers() {
+    this.userService.getAll().subscribe(u &#x3D;&gt; {
+      this.users &#x3D; u;
+    });
+  }
+
+  /**
+   * Retrieves the statuses using the {@link IssueService}
+   */
+  getStatuses() {
+    this.issueService.getIssueStatuses().subscribe(s &#x3D;&gt; this.statuses &#x3D; s);
+  }
+
+  /**
+   * Retrieves the categories using the {@link IssueService}
+   */
+  getCategories() {
+    this.issueService.getIssueCategories().subscribe(c &#x3D;&gt; {
+      this.categories &#x3D; c;
+    });
+  }
+
+  /**
+   * Retrieves the priorities using the {@link IssueService}
+   */
+  getPriorities() {
+    this.priorities &#x3D; this.issueService.getIssuePriorities();
+  }
+
+  /**
+   * Retrieves the status notes that belong to the selected issue using the {@link IssueService}
+   */
+  getNotes(id: number) {
+    this.notes &#x3D; this.issueService.getIssueNotes(id);
+  }
+
+  /**
+   * Retrieves the username of the given user ID
+   *
+   * @param {number} userId The user ID to look for
+   * @returns {string} The username
+   */
+  getUserName(id: number): string {
+    let user &#x3D; _.find(this.users, u &#x3D;&gt; u.id &#x3D;&#x3D;&#x3D; id);
+    return user &amp;&amp; user.username;
+  }
+
+  /**
+   * Retrieves the name of the given status ID
+   *
+   * @param {number} statusId The status ID to look for
+   * @returns {string} The status name
+   */
+  getStatusName(id: number): string {
+    let status &#x3D; _.find(this.statuses, s &#x3D;&gt; s.id &#x3D;&#x3D;&#x3D; id);
+    return status &amp;&amp; status.name;
+  }
+
+  /**
+   * Executed when clicking on the Save button to update the selected issue&#x27;s details. Validates the form and starts the saving process.
+   */
+  OnSaveIssue() {
+    this.issueError &#x3D; &quot;&quot;;
+    this.issueLoading &#x3D; true;
+
+    this.issueService.addOrUpdateIssue(this.selectedIssue).pipe(first()).subscribe(data &#x3D;&gt; {
+      this.issueLoading &#x3D; false;
+    }, error &#x3D;&gt; {
+      this.issueLoading &#x3D; false;
+      this.issueError &#x3D; error.error.message || error.error[0];
+    });
+  }
+
+  /**
+   * Gets all the controls from the status note form
+   */
+  get snf() {
+    return this.statusNoteForm.controls;
+  }
+
+  /**
+   * Executed when clicking on the Save button to add a new status note. Validates the form and starts the saving process. Also updates the UI in the end to display the newly added note.
+   */
+  OnStatusNoteSave() {
+    this.statusNoteSubmitted &#x3D; true;
+
+    if (this.statusNoteForm.invalid) {
+      return;
+    }
+
+    this.statusNoteSubmitted &#x3D; false;
+    this.statusNoteError &#x3D; &quot;&quot;;
+    this.statusNoteLoading &#x3D; true;
+
+    let newNote: Note &#x3D; {
+      issueId: this.selectedIssue.id,
+      userId: this.authService.currentUserValue.id,
+      statusId: +this.snf.status.value,
+      text: this.snf.notes.value
+    }
+
+    this.issueService.addStatusNote(newNote).pipe(first()).subscribe(data &#x3D;&gt; {
+      this.statusNoteLoading &#x3D; false;
+      this.getNotes(this.selectedIssue.id);
+      this.getIssue(this.selectedIssue.id);
+      this.statusNoteForm.reset();
+    }, error &#x3D;&gt; {
+      this.statusNoteLoading &#x3D; false;
+      this.statusNoteError &#x3D; error.error.message || error.error[0];
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;div class&#x3D;&quot;col-xs-12 col-md-6&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot; *ngIf&#x3D;&quot;selectedIssue&quot;&gt;
+          &lt;div class&#x3D;&quot;card-header&quot;&gt;{{selectedIssue.title}} - {{getStatusName(selectedIssue.statusId)}}&lt;/div&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;form (ngSubmit)&#x3D;&quot;OnSaveIssue()&quot;&gt;
+              &lt;pre class&#x3D;&quot;border rounded&quot; [innerHTML]&#x3D;&quot;selectedIssue.description&quot;&gt;&lt;/pre&gt;
+
+              &lt;div class&#x3D;&quot;form-group my-3&quot;&gt;
+                &lt;label for&#x3D;&quot;assignedTo&quot;&gt;Assigned To&lt;/label&gt;
+                &lt;select class&#x3D;&quot;form-control&quot; name&#x3D;&quot;assignedTo&quot; [(ngModel)]&#x3D;&quot;selectedIssue.assignedToId&quot;&gt;
+                  &lt;option *ngFor&#x3D;&quot;let user of users&quot; [ngValue]&#x3D;&quot;user.id&quot;&gt;{{user.username}} ({{user.firstName}}
+                    {{user.lastName}})&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;category&quot;&gt;Category&lt;/label&gt;
+                &lt;select class&#x3D;&quot;form-control&quot; name&#x3D;&quot;category&quot; [(ngModel)]&#x3D;&quot;selectedIssue.categoryId&quot;&gt;
+                  &lt;option *ngFor&#x3D;&quot;let category of categories&quot; [ngValue]&#x3D;&quot;category.id&quot;&gt;{{category.name}}
+                  &lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;priority&quot;&gt;Priority&lt;/label&gt;
+                &lt;select class&#x3D;&quot;form-control&quot; name&#x3D;&quot;priority&quot; [(ngModel)]&#x3D;&quot;selectedIssue.priorityId&quot;&gt;
+                  &lt;option *ngFor&#x3D;&quot;let priority of priorities | async&quot; [ngValue]&#x3D;&quot;priority.id&quot;&gt;{{priority.name}}
+                  &lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;dueOn&quot;&gt;Due Date:&lt;/label&gt;
+                &lt;input type&#x3D;&quot;date&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;dueOn&quot;
+                  [ngModel]&#x3D;&quot;selectedIssue.dueOn | date: &#x27;yyyy-MM-dd&#x27;&quot; (ngModelChange)&#x3D;&quot;selectedIssue.dueOn &#x3D; $event&quot;&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;issueLoading&quot;&gt;Save&lt;/button&gt;
+                &lt;img *ngIf&#x3D;&quot;issueLoading&quot; class&#x3D;&quot;pl-2&quot;
+                  src&#x3D;&quot;data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA&#x3D;&#x3D;&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div *ngIf&#x3D;&quot;issueError&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;{{issueError}}&lt;/div&gt;
+            &lt;/form&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;col-xs-12 col-md-6&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot; *ngIf&#x3D;&quot;selectedIssue&quot;&gt;
+          &lt;div class&#x3D;&quot;card-header&quot;&gt;Set Status&lt;/div&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;form [formGroup]&#x3D;&quot;statusNoteForm&quot; (ngSubmit)&#x3D;&quot;OnStatusNoteSave()&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;status&quot;&gt;New Status:&lt;/label&gt;
+                &lt;select class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;status&quot;
+                  [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: statusNoteSubmitted &amp;&amp; snf.status.errors}&quot;&gt;
+                  &lt;option *ngFor&#x3D;&quot;let status of statuses&quot; [ngValue]&#x3D;&quot;status.id&quot;&gt;
+                    {{status.name}}&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;div *ngIf&#x3D;&quot;statusNoteSubmitted &amp;&amp; snf.status.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                  &lt;div *ngIf&#x3D;&quot;snf.status.errors.required&quot;&gt;Status is required&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;label for&#x3D;&quot;notes&quot;&gt;Notes:&lt;/label&gt;
+                &lt;textarea class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;notes&quot; placeholder&#x3D;&quot;Enter notes...&quot; rows&#x3D;&quot;4&quot;
+                  [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: statusNoteSubmitted &amp;&amp; snf.notes.errors}&quot;&gt;&lt;/textarea&gt;
+                &lt;div *ngIf&#x3D;&quot;statusNoteSubmitted &amp;&amp; snf.notes.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                  &lt;div *ngIf&#x3D;&quot;snf.notes.errors.required&quot;&gt;Notes are required&lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;statusNoteLoading&quot;&gt;Save&lt;/button&gt;
+                &lt;img *ngIf&#x3D;&quot;statusNoteLoading&quot; class&#x3D;&quot;pl-2&quot;
+                  src&#x3D;&quot;data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA&#x3D;&#x3D;&quot; /&gt;
+              &lt;/div&gt;
+              &lt;div *ngIf&#x3D;&quot;statusNoteError&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;{{statusNoteError}}&lt;/div&gt;
+            &lt;/form&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row my-3&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot; *ngIf&#x3D;&quot;selectedIssue&quot;&gt;
+      &lt;div class&#x3D;&quot;card-header&quot;&gt;Notes&lt;/div&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot; *ngFor&#x3D;&quot;let note of notes | async&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;dl&gt;
+              &lt;dt&gt;{{getUserName(note.userId)}} - {{note.createdOn | date:&#x27;yyyy-MM-dd H:mm&#x27;}} -
+                {{getStatusName(note.statusId)}}&lt;/dt&gt;
+              &lt;dd&gt;{{note.text}}&lt;/dd&gt;
+            &lt;/dl&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./issue.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-xs-12 col-md-6">    <div class="row">      <div class="col-md-12">        <div class="card" *ngIf="selectedIssue">          <div class="card-header">{{selectedIssue.title}} - {{getStatusName(selectedIssue.statusId)}}</div>          <div class="card-body">            <form (ngSubmit)="OnSaveIssue()">              <pre class="border rounded" [innerHTML]="selectedIssue.description"></pre>              <div class="form-group my-3">                <label for="assignedTo">Assigned To</label>                <select class="form-control" name="assignedTo" [(ngModel)]="selectedIssue.assignedToId">                  <option *ngFor="let user of users" [ngValue]="user.id">{{user.username}} ({{user.firstName}}                    {{user.lastName}})</option>                </select>              </div>              <div class="form-group">                <label for="category">Category</label>                <select class="form-control" name="category" [(ngModel)]="selectedIssue.categoryId">                  <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}                  </option>                </select>              </div>              <div class="form-group">                <label for="priority">Priority</label>                <select class="form-control" name="priority" [(ngModel)]="selectedIssue.priorityId">                  <option *ngFor="let priority of priorities | async" [ngValue]="priority.id">{{priority.name}}                  </option>                </select>              </div>              <div class="form-group">                <label for="dueOn">Due Date:</label>                <input type="date" class="form-control" name="dueOn"                  [ngModel]="selectedIssue.dueOn | date: \'yyyy-MM-dd\'" (ngModelChange)="selectedIssue.dueOn = $event">              </div>              <div class="form-group">                <button type="submit" class="btn btn-primary" [disabled]="issueLoading">Save</button>                <img *ngIf="issueLoading" class="pl-2"                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />              </div>              <div *ngIf="issueError" class="alert alert-danger">{{issueError}}</div>            </form>          </div>        </div>      </div>    </div>  </div>  <div class="col-xs-12 col-md-6">    <div class="row">      <div class="col-md-12">        <div class="card" *ngIf="selectedIssue">          <div class="card-header">Set Status</div>          <div class="card-body">            <form [formGroup]="statusNoteForm" (ngSubmit)="OnStatusNoteSave()">              <div class="form-group">                <label for="status">New Status:</label>                <select class="form-control" formControlName="status"                  [ngClass]="{\'is-invalid\': statusNoteSubmitted && snf.status.errors}">                  <option *ngFor="let status of statuses" [ngValue]="status.id">                    {{status.name}}</option>                </select>                <div *ngIf="statusNoteSubmitted && snf.status.errors" class="invalid-feedback">                  <div *ngIf="snf.status.errors.required">Status is required</div>                </div>              </div>              <div class="form-group">                <label for="notes">Notes:</label>                <textarea class="form-control" formControlName="notes" placeholder="Enter notes..." rows="4"                  [ngClass]="{\'is-invalid\': statusNoteSubmitted && snf.notes.errors}"></textarea>                <div *ngIf="statusNoteSubmitted && snf.notes.errors" class="invalid-feedback">                  <div *ngIf="snf.notes.errors.required">Notes are required</div>                </div>              </div>              <div class="form-group">                <button type="submit" class="btn btn-primary" [disabled]="statusNoteLoading">Save</button>                <img *ngIf="statusNoteLoading" class="pl-2"                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />              </div>              <div *ngIf="statusNoteError" class="alert alert-danger">{{statusNoteError}}</div>            </form>          </div>        </div>      </div>    </div>  </div></div><div class="row my-3">  <div class="col-md-12">    <div class="card" *ngIf="selectedIssue">      <div class="card-header">Notes</div>      <div class="card-body">        <div class="card" *ngFor="let note of notes | async">          <div class="card-body">            <dl>              <dt>{{getUserName(note.userId)}} - {{note.createdOn | date:\'yyyy-MM-dd H:mm\'}} -                {{getStatusName(note.statusId)}}</dt>              <dd>{{note.text}}</dd>            </dl>          </div>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssignedToMeComponent', 'selector': 'app-assigned-to-me'},{'name': 'ClosedIssuesComponent', 'selector': 'app-closed-issues'},{'name': 'CreatedByMeComponent', 'selector': 'app-created-by-me'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'IssueComponent', 'selector': 'app-issue'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NewIssueComponent', 'selector': 'app-new-issue'},{'name': 'OptionsComponent', 'selector': 'app-options'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'IssueComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'IssueComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
